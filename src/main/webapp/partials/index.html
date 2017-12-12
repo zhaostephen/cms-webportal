@@ -1,0 +1,19 @@
+<div class="pull-right">
+	<a href="#!/create" class="btn btn-default" ng-show="hasRole('ROLE_ADMIN')" title="Create"><span class="fa fa-plus"></span></a>
+</div>
+<div class="page-header">
+	<h3>Documents</h3>
+</div>
+
+<div ng-repeat="document in documents">
+	<hr />
+	<div class="pull-right">
+		<a href="" ng-click="deleteDocument(document)" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')"
+		   title="delete"><span class="fa fa-trash-o"></span></a>
+		<a href="#!/edit/{{document.id}}" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')"
+		   title="edit"><span class="fa fa-pencil"></span></a>
+	</div>
+	<h4>{{document.date | date}}</h4>
+	<p>{{document.content}}</p>
+</div>
+<hr />
